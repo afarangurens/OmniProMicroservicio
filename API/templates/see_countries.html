@@ -6,7 +6,6 @@
 <a href="{% url 'create-country' %}">Crear Pais</a>
     {% for country in countries %}
         <h5>{{country.id}} -- Pais:  <a href="{% url 'country' country.id %}">{{country.name}} {{country.code}} </a></h5>
-        <span>Tienda Favorita: {{country.favorite_stor}}</span>
         <a href="{% url 'update-country' country.id %}">Editar</a>
         <a href="{% url 'delete-country' country.id %}">Borrar</a></h5>
     {% endfor %}

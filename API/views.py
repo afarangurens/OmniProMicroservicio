@@ -11,7 +11,7 @@ def create_client(request):
 
         if form.is_valid():
             form.save()
-            return redirect('create-state')
+            return redirect('home')
     context = {'form': form}
 
     return render(request, 'create_client.html', context)
@@ -24,7 +24,7 @@ def create_country(request):
 
         if form.is_valid():
             form.save()
-            return redirect('create-country')
+            return redirect('home')
     context = {'form': form}
 
     return render(request, 'create_country.html', context)
@@ -37,7 +37,7 @@ def create_state(request):
 
         if form.is_valid():
             form.save()
-            return redirect('create-state')
+            return redirect('home')
     context = {'form': form}
 
     return render(request, 'create_state.html', context)
@@ -50,7 +50,7 @@ def create_city(request):
 
         if form.is_valid():
             form.save()
-            return redirect('create-state')
+            return redirect('home')
     context = {'form': form}
 
     return render(request, 'create_city.html', context)
@@ -63,7 +63,7 @@ def create_store(request):
 
         if form.is_valid():
             form.save()
-            return redirect('create-state')
+            return redirect('home')
     context = {'form': form}
 
     return render(request, 'create_store.html', context)
