@@ -16,7 +16,7 @@
 
 - Debe cumplir con el siguiente diagrama entidad relación:
 <p align="center">
-	<img src="https://github.com/afarangurens/afarangurens/blob/main/Banner/banner.png">>
+	<img src="https://github.com/afarangurens/OmniProMicroservicio/blob/main/Prueba%20OMNI.jpg">>
 </p>
 
 - Debe usar PostgreSQL como motor de base de datos.
