@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<h2>Clientes</h2>
-    {% for client in clients %}
-        <h5>{{client.id}} -- <a href="{% url 'client' client.id %}">Cliente: {{client.name}} {{client.surname}} </a></h5>
-        <span>Tienda Favorita: {{client.favorite_stor}}</span>
-        <a href="{% url 'update-client' client.id %}">Editar</a>
-        <a href="{% url 'delete-client' client.id %}">Borrar</a></h5>
+<h2>Estados</h2>
+<a href="{% url 'create-state' %}">Crear Estado</a>
+    {% for state in states %}
+        <h5>{{state.id}} -- <a href="{% url 'state' state.id %}">Estado: {{state.name}} {{state.code}} </a></h5>
+        <a href="{% url 'update-state' state.id %}">Editar</a>
+        <a href="{% url 'delete-state' state.id %}">Borrar</a></h5>
     {% endfor %}
 </div>
 
