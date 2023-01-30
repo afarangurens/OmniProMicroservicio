@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Client, Country, State, City, Store
 from .forms import ClientForm, CountryForm, StateForm, CitytForm, StoreForm
-
+from .serializers import ClientSerializer, CountrySerializer, StateSerializer, CitytSerializer, StoreSerializer
+from rest_framework import generics
 # CREATE 
 def create_client(request):
     form =  ClientForm()
@@ -75,12 +76,14 @@ def see_clients(request):
     context = {"clients": clients}
 
     return render(request, 'see_clients.html', context)
-    
+
+
 def see_countries(request):
     countries = Country.objects.all()
     context = {"countries": countries}
 
     return render(request, 'see_countries.html', context)
+    
     
 def see_states(request):
     states = State.objects.all()
@@ -262,7 +265,7 @@ def get_all_cities_in_a_state(request, state_id):
     state = State.objects.get(id=state_id)
     cities = state.city_set.all()
 
-    context = {"cities": cities}
+    context = {"state": state, "cities": cities}
 
     return render(request, 'see_cities.html', context)
 
@@ -277,7 +280,7 @@ def get_all_store_clients(request, store_id):
 
 def get_all_clients_given_state(request, state_id):
     state = State.objects.get(id=state_id)
-    clients = state.city_set.all()
+    clients = state.client_set.all()
 
     context = {"clients": clients}
 

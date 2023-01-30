@@ -5,9 +5,12 @@
 <h2>Estados</h2>
 <a href="{% url 'create-state' %}">Crear Estado</a>
     {% for state in states %}
-        <h5>{{state.id}} -- <a href="{% url 'state' state.id %}">Estado: {{state.name}} {{state.code}} </a></h5>
+        <h5>{{state.id}} -- Estado: <a href="{% url 'state' state.id %}">{{state.name}}</a></h5>
         <a href="{% url 'update-state' state.id %}">Editar</a>
         <a href="{% url 'delete-state' state.id %}">Borrar</a></h5>
+        <a href="{% url 'cities-within-state' state.id %}">Ver Ciudades de Este Estado</a></h5>
+        <a href="{% url 'clients-by-state' state.id %}">Ver Clientes de Este Estado</a></h5>
+        <hr>
     {% endfor %}
 </div>
 

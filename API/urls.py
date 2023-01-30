@@ -41,6 +41,6 @@ urlpatterns = [
 
     # 
     path('cities-within-state/<str:state_id>', views.get_all_cities_in_a_state, name='cities-within-state'),
-    path('store-clients/<str:store_id>', views.get_all_store_clients, name='cities-within-state'),
-    path('clients-by-state/<str:state_id>', views.get_all_clients_given_state, name='cities-within-state'),
+    path('store-clients/<str:store_id>', views.get_all_store_clients, name='store-clients'),
+    path('clients-by-state/<str:state_id>', views.get_all_clients_given_state, name='clients-by-state'),
 ]
