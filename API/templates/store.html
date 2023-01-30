@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <h2>Nombre Tienda: {{store}}</h2>
+    <h2>Codigo: {{store.code}}</h2>
+    <a href="{% url 'update-store' store.id %}">Editar</a>
+    <a href="{% url 'delete-store' store.id %}">Borrar</a></h5>
+
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <h2>Nombre País: {{country}}</h2>
+    <h2>Codigo: {{country.code}}</h2>
+    <a href="{% url 'update-country' country.id %}">Editar</a>
+    <a href="{% url 'delete-country' country.id %}">Borrar</a></h5>
+
+
+{% endblock content %}

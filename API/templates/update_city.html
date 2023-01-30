@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+        <h2>Modificar Ciudad</h2>
+        <!-- form as paragraph -->
+        {{ city.as_p }}
+
+        <input type="submit" value="Update">
+    </form>
+
+{% endblock content %}

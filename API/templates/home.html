@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <a class="nav-item nav-link" href="{% url 'see-clients' %}"><i class="fa-solid fa-warehouse"></i>Clientes</a>
+    <hr>
+    <a class="nav-item nav-link" href="{% url 'see-countries' %}"><i class="fa-regular fa-newspaper"></i> Paises</a>
+    <hr>
+    <a class="nav-item nav-link" href="{% url 'see-states' %}"><i class="fa-solid fa-user-group"></i> Estados</a>
+    <hr>
+    <a class="nav-item nav-link" href="{% url 'see-cities' %}"><i class="fa-solid fa-chart-line"></i> Ciudades</a>
+    <hr>
+    <a class="nav-item nav-link" href="{% url 'see-stores' %}"><i class="fa-solid fa-chart-line"></i> Tiendas</a>
+    <hr>
+
+{% endblock content %}

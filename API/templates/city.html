@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <h2>Nombre Ciudad: {{city}}</h2>
+    <h2>Codigo: {{city.code}}</h2>
+    <a href="{% url 'update-city' city.id %}">Editar</a>
+    <a href="{% url 'delete-city' city.id %}">Borrar</a></h5>
+
+
+{% endblock content %}

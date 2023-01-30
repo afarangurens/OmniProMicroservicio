@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <h1>PAÍSES</h1>
+
+    <form method="POST">
+        <h2>Crear País</h2>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit" />
+    </form>
+
+{% endblock %}
