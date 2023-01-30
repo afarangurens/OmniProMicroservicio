@@ -38,4 +38,9 @@ urlpatterns = [
     path('see-stores/', views.see_stores, name='see-stores'),
     path('update-store/<str:store_id>', views.update_store, name='update-store'),
     path('delete-store/<str:store_id>', views.delete_store, name='delete-store'),
+
+    # 
+    path('cities-within-state/<str:state_id>', views.get_all_cities_in_a_state, name='cities-within-state'),
+    path('store-clients/<str:store_id>', views.get_all_store_clients, name='cities-within-state'),
+    path('clients-by-state/<str:state_id>', views.get_all_clients_given_state, name='cities-within-state'),
 ]

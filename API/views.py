@@ -2,11 +2,6 @@ from django.shortcuts import render, redirect
 from .models import Client, Country, State, City, Store
 from .forms import ClientForm, CountryForm, StateForm, CitytForm, StoreForm
 
-# Create your views here.
-def list_clients(request):
-    return render(request, 'list_clients.html')
-
-
 # CREATE 
 def create_client(request):
     form =  ClientForm()
@@ -262,3 +257,28 @@ def delete_store(request, store_id):
 
 def home(request):
     return render(request, 'home.html')
+
+def get_all_cities_in_a_state(request, state_id):
+    state = State.objects.get(id=state_id)
+    cities = state.city_set.all()
+
+    context = {"cities": cities}
+
+    return render(request, 'see_cities.html', context)
+
+
+def get_all_store_clients(request, store_id):
+    store = Store.objects.get(id=store_id)
+    clients = store.client_set.all()
+
+    context = {"clients": clients}
+
+    return render(request, 'see_clients.html', context)
+
+def get_all_clients_given_state(request, state_id):
+    state = State.objects.get(id=state_id)
+    clients = state.city_set.all()
+
+    context = {"clients": clients}
+
+    return render(request, 'see_clients.html', context)
